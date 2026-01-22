@@ -7,12 +7,12 @@ const Guide = () => {
             <h1 className="text-4xl text-center mb-16"><span className="text-ice">SURVIVAL</span> STRATEGY</h1>
 
             <section className="mb-20">
-                <div className="glass-panel p-8 mb-12 flex justify-center">
+                <div className="glass-panel p-2 md:p-8 mb-12 flex justify-center bg-black/40">
                     {/* GIF Embed */}
                     <img
-                        src="/assets/survival-guide.gif"
+                        src="assets/survival-guide.gif"
                         alt="Survival Guide Animation"
-                        className="max-w-full rounded-lg shadow-[0_0_20px_rgba(160,233,255,0.2)]"
+                        className="w-full max-w-4xl rounded border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.5)]"
                     />
                 </div>
 

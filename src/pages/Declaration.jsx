@@ -114,32 +114,34 @@ const Declaration = () => {
             </div>
 
             {/* Input Form - Fixed at bottom right */}
-            <div className="fixed bottom-24 right-4 md:right-8 z-50 w-full max-w-md">
-                <form onSubmit={handleSubmit} className="glass-panel p-4 flex flex-col gap-3 shadow-2xl border border-ice/30 bg-black/80">
-                    <div className="flex gap-2">
+            <div className="fixed bottom-12 right-4 md:right-12 z-50 w-full max-w-2xl px-4 md:px-0">
+                <form onSubmit={handleSubmit} className="glass-panel p-6 flex flex-col gap-4 shadow-2xl border border-ice/30 bg-black/80">
+                    <div className="flex flex-col md:flex-row gap-3">
                         <input
                             type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             placeholder="名前 (Name)"
-                            className="w-1/3 bg-[#151525] border border-gray-600 text-white p-3 rounded focus:outline-none focus:border-ice transition-colors text-sm"
+                            className="w-full md:w-1/4 bg-[#151525] border border-gray-600 text-white p-4 rounded focus:outline-none focus:border-ice transition-colors text-base"
                             required
                         />
-                        <input
-                            type="text"
-                            value={input}
-                            onChange={(e) => setInput(e.target.value)}
-                            placeholder="宣言を入力..."
-                            className="flex-grow bg-[#151525] border border-gray-600 text-white p-3 rounded focus:outline-none focus:border-ice transition-colors"
-                            required
-                        />
-                        <button
-                            type="submit"
-                            disabled={!input.trim() || !name.trim()}
-                            className="btn btn-primary p-3 rounded aspect-square flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
-                        >
-                            <Send size={20} />
-                        </button>
+                        <div className="flex-grow flex gap-2">
+                            <input
+                                type="text"
+                                value={input}
+                                onChange={(e) => setInput(e.target.value)}
+                                placeholder="宣言を入力..."
+                                className="w-full bg-[#151525] border border-gray-600 text-white p-4 rounded focus:outline-none focus:border-ice transition-colors text-lg"
+                                required
+                            />
+                            <button
+                                type="submit"
+                                disabled={!input.trim() || !name.trim()}
+                                className="btn btn-primary px-6 rounded flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed min-w-[60px]"
+                            >
+                                <Send size={24} />
+                            </button>
+                        </div>
                     </div>
                     <p className="text-xs text-center text-gray-500">※デモモード: 投稿は保存されませんが、リアルタイムで画面に流れます。</p>
                 </form>

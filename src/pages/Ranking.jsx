@@ -30,18 +30,18 @@ const Ranking = () => {
 
             {/* Tabs */}
             <div className="flex justify-center mb-12">
-                <div className="bg-[#151525]/50 p-1 rounded-full flex border border-white/10 backdrop-blur-sm">
+                <div className="bg-black/40 p-1.5 rounded-2xl md:rounded-full flex flex-col md:flex-row border border-white/10 backdrop-blur-md shadow-2xl mx-4 md:mx-0 w-full md:w-auto">
                     <button
                         onClick={() => setActiveTab('alliance')}
-                        className={`px-8 py-3 rounded-full flex items-center gap-2 transition-all ${activeTab === 'alliance' ? 'bg-ice text-black shadow-[0_0_15px_rgba(160,233,255,0.4)]' : 'text-gray-400 hover:text-white'}`}
+                        className={`px-6 md:px-10 py-4 rounded-xl md:rounded-full flex items-center justify-center gap-3 transition-all duration-300 font-display tracking-wider ${activeTab === 'alliance' ? 'bg-ice text-black shadow-[0_0_25px_rgba(160,233,255,0.6)] scale-105 z-10' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
                     >
-                        <Users size={18} /> 最強の同盟
+                        <Users size={20} /> <span className="text-lg">最強の同盟</span>
                     </button>
                     <button
                         onClick={() => setActiveTab('individual')}
-                        className={`px-8 py-3 rounded-full flex items-center gap-2 transition-all ${activeTab === 'individual' ? 'bg-magma text-white shadow-[0_0_15px_rgba(255,87,51,0.4)]' : 'text-gray-400 hover:text-white'}`}
+                        className={`px-6 md:px-10 py-4 rounded-xl md:rounded-full flex items-center justify-center gap-3 transition-all duration-300 font-display tracking-wider ${activeTab === 'individual' ? 'bg-magma text-white shadow-[0_0_25px_rgba(255,87,51,0.6)] scale-105 z-10' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
                     >
-                        <User size={18} /> 総督表彰
+                        <User size={20} /> <span className="text-lg">総督表彰</span>
                     </button>
                 </div>
             </div>
