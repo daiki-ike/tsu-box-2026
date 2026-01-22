@@ -8,7 +8,7 @@ import Ranking from './pages/Ranking';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/tsu-box-2026/">
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
