@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col relative">
+    <div className="min-h-screen w-full flex flex-col relative overflow-x-hidden">
       {/* Dynamic Background Particles */}
       <div className="snow-container">
         {particles.map((p) => (
@@ -59,7 +59,7 @@ const Layout = ({ children }) => {
       </div>
 
       <nav className="fixed top-0 left-0 w-full z-50 bg-[#050510]/80 backdrop-blur-md border-b border-white/10">
-        <div className="container flex justify-between items-center py-4">
+        <div className="w-full max-w-[1600px] mx-auto px-6 flex justify-between items-center py-4">
           <Link to="/" className="text-2xl font-bold tracking-widest text-ice flex items-center gap-2 font-display">
             <Snowflake className="animate-spin-slow" />
             TSU-BOX 2026
@@ -81,19 +81,23 @@ const Layout = ({ children }) => {
         </div>
       </nav>
 
-      <main className="flex-grow pt-24 z-10 relative">
-        {children}
+      <main className="flex-grow w-full flex flex-col items-center pt-24 z-10 relative">
+        <div className="w-full">
+          {children}
+        </div>
       </main>
 
-      <footer className="py-8 text-center text-gray-600 border-t border-gray-900 mt-20">
-        <p className="mb-4">&copy; 2026 TSU-BOX ANNUAL QUEST. Survive the Seasons.</p>
+      <footer className="py-8 w-full border-t border-gray-900 mt-20 relative z-10">
+        <div className="w-full text-center text-gray-600">
+          <p className="mb-4">&copy; 2026 TSU-BOX ANNUAL QUEST. Survive the Seasons. <span style={{ color: '#ff4500', fontWeight: 'bold' }} className="text-lg ml-2">v.22-1670</span></p>
 
-        {/* Debug / Season Switcher */}
-        <div className="flex justify-center gap-2 text-xs">
-          <button onClick={() => setSeason('spring')} className={`px-2 py-1 border rounded ${season === 'spring' ? 'bg-pink-900 text-white' : 'border-gray-700'}`}>SPRING</button>
-          <button onClick={() => setSeason('summer')} className={`px-2 py-1 border rounded ${season === 'summer' ? 'bg-green-900 text-white' : 'border-gray-700'}`}>SUMMER</button>
-          <button onClick={() => setSeason('autumn')} className={`px-2 py-1 border rounded ${season === 'autumn' ? 'bg-orange-900 text-white' : 'border-gray-700'}`}>AUTUMN</button>
-          <button onClick={() => setSeason('winter')} className={`px-2 py-1 border rounded ${season === 'winter' ? 'bg-blue-900 text-white' : 'border-gray-700'}`}>WINTER</button>
+          {/* Debug / Season Switcher - Hidden but functional */}
+          <div className="hidden justify-center gap-2 text-xs">
+            <button onClick={() => setSeason('spring')} className={`px-2 py-1 border rounded ${season === 'spring' ? 'bg-pink-900 text-white' : 'border-gray-700'}`}>SPRING</button>
+            <button onClick={() => setSeason('summer')} className={`px-2 py-1 border rounded ${season === 'summer' ? 'bg-green-900 text-white' : 'border-gray-700'}`}>SUMMER</button>
+            <button onClick={() => setSeason('autumn')} className={`px-2 py-1 border rounded ${season === 'autumn' ? 'bg-orange-900 text-white' : 'border-gray-700'}`}>AUTUMN</button>
+            <button onClick={() => setSeason('winter')} className={`px-2 py-1 border rounded ${season === 'winter' ? 'bg-blue-900 text-white' : 'border-gray-700'}`}>WINTER</button>
+          </div>
         </div>
       </footer>
     </div>

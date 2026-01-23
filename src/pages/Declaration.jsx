@@ -104,10 +104,10 @@ const Declaration = () => {
 
             {/* Title Area */}
             <div className="relative z-10 text-center pointer-events-none px-4">
-                <h1 className="text-5xl md:text-7xl mb-4 font-display tracking-widest drop-shadow-[0_0_20px_rgba(160,233,255,0.5)]">
-                    NEW YEAR'S<br /><span className="text-ice">DECLARATION</span>
+                <h1 className="text-5xl md:text-7xl mb-4 font-display tracking-widest">
+                    NEW YEAR'S<br /><span className="text-ice animate-ice-shimmer">DECLARATION</span>
                 </h1>
-                <p className="text-gray-400 mb-8 max-w-lg mx-auto bg-black/30 backdrop-blur-sm p-4 rounded-lg">
+                <p className="text-gray-300 mb-8 max-w-lg mx-auto bg-black/50 backdrop-blur-md p-4 rounded-lg border border-ice/20">
                     今年の抱負、覚悟、あるいは「一言」を叫べ。<br />
                     言葉は光となり、この氷河を照らす道標となる。
                 </p>
@@ -115,14 +115,14 @@ const Declaration = () => {
 
             {/* Input Form - Fixed at bottom right */}
             <div className="fixed bottom-12 right-4 md:right-12 z-50 w-full max-w-2xl px-4 md:px-0">
-                <form onSubmit={handleSubmit} className="glass-panel p-6 flex flex-col gap-4 shadow-2xl border border-ice/30 bg-black/80">
+                <form onSubmit={handleSubmit} className="glass-panel depth-card p-6 flex flex-col gap-4 border-2 border-ice/30 bg-black/80 tactical-corner">
                     <div className="flex flex-col md:flex-row gap-3">
                         <input
                             type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             placeholder="名前 (Name)"
-                            className="w-full md:w-1/4 bg-[#151525] border border-gray-600 text-white p-4 rounded focus:outline-none focus:border-ice transition-colors text-base"
+                            className="w-full md:w-1/4 bg-[#0a1628] border-2 border-ice/30 text-white p-4 rounded focus:outline-none focus:border-ice focus:shadow-[0_0_15px_rgba(0,212,255,0.5)] transition-all text-base"
                             required
                         />
                         <div className="flex-grow flex gap-2">
@@ -131,13 +131,13 @@ const Declaration = () => {
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
                                 placeholder="宣言を入力..."
-                                className="w-full bg-[#151525] border border-gray-600 text-white p-4 rounded focus:outline-none focus:border-ice transition-colors text-lg"
+                                className="w-full bg-[#0a1628] border-2 border-ice/30 text-white p-4 rounded focus:outline-none focus:border-ice focus:shadow-[0_0_15px_rgba(0,212,255,0.5)] transition-all text-lg"
                                 required
                             />
                             <button
                                 type="submit"
                                 disabled={!input.trim() || !name.trim()}
-                                className="btn btn-primary px-6 rounded flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed min-w-[60px]"
+                                className="btn btn-fire px-6 rounded flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed min-w-[60px]"
                             >
                                 <Send size={24} />
                             </button>
